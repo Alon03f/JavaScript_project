@@ -1,5 +1,3 @@
-# JavaScript_project
-
 # Alon Friedman
 Welcome to my personal portfolio! 
 I am a full stack student.
