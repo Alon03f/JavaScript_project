@@ -7,10 +7,10 @@
   <title>Task Manager</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+
 </head>
 
 <body>
-
   <header>
     <h1>Task Manager</h1>
   </header>
@@ -31,6 +31,14 @@
 
     <ul id="taskList"></ul>
   </main>
+
+<div id="alertOverlay" class="hidden">
+  <div id="alertBox">
+    <h2>יש לשים לב!</h2>
+    <p id="alertMessage">תוכן ההודעה</p>
+    <button onclick="closeCustomAlert()">חזרה לאתר</button>
+  </div>
+</div>
 
   <footer>
     <p>ניהול משימות עם JavaScript</p>
