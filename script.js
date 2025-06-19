@@ -47,18 +47,35 @@ function renderTasks(filter = currentFilter) {
   });
 }
 
+function showCustomAlert(message) {
+  const alertOverlay = document.getElementById('alertOverlay');
+  const alertMessage = document.getElementById('alertMessage');
+  alertMessage.textContent = message;
+  alertOverlay.classList.remove('hidden');
+}
+
+function closeCustomAlert() {
+  const alertOverlay = document.getElementById('alertOverlay');
+  alertOverlay.classList.add('hidden');
+}
+
 function addTask() {
   const text = taskText.value.trim();
   const dueDate = taskDate.value;
   const today = new Date().toISOString().split('T')[0];
 
-  if (!text || !dueDate) {
-    alert('יש צורך בכיתבת תאריך');
+  if (!text) {
+    showCustomAlert('יש צורך בכתיבת שם למשימה');
     return;
   }
 
-  if (dueDate < today) {
-    alert('לא ניתן להזין תאריך אחורה מהיום הנוכחי');
+  if (!dueDate) {
+    showCustomAlert('יש צורך בהזנת תאריך למשימה');
+    return;
+  }
+
+  if (new Date(dueDate) < new Date(today)) {
+    showCustomAlert('לא ניתן להזין תאריך אחורה מהיום הנוכחי');
     return;
   }
 
@@ -77,17 +94,20 @@ function addTask() {
   taskDate.value = '';
 }
 
+
 function renderSingleTask(task) {
   const li = document.createElement('li');
-  li.className = 'fade-in';
+  li.className = task.completed ? 'completed fade-in' : 'fade-in';
   li.setAttribute('data-id', task.id);
   li.innerHTML = `
     <span><strong>${task.text}</strong> - ${task.dueDate}</span>
     <div>
-      <button onclick="toggleTask('${task.id}')">${task.completed ? 'בטל השלמה' : 'סמן כהושלם'}</button>
-      <button onclick="deleteTask('${task.id}')"><img src="trash.png" alt="Delete"
-        width="15" height="15">
-        </button>
+      <button class="list_buttons" onclick="toggleTask('${task.id}')">
+        ${task.completed ? 'בטל השלמה' : 'סמן כהושלם'}
+      </button>
+      <button class="trash" onclick="deleteTask('${task.id}')">
+        <img src="trash.webp" alt="Delete" width="15" height="15">
+      </button>
     </div>
   `;
   taskList.appendChild(li);
