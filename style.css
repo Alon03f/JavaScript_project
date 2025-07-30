@@ -149,6 +149,7 @@ ul#taskList li {
   align-items: flex-start;
   gap: 0.5rem;
   background-color: #fff;
+  color: "black"
 }
 
 ul#taskList li span {
@@ -195,4 +196,8 @@ a {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
   text-align: center;
+}
+
+#taskDate{
+color: "black"
 }
