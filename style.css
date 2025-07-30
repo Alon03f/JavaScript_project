@@ -111,6 +111,10 @@ ul#taskList li.completed {
 }
 
 @media (max-width: 576px) {
+  body {
+  background-color: #fafafa;
+}
+  
   main {
     padding: 1rem;
     border-radius: 0;
@@ -144,6 +148,7 @@ ul#taskList li {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  background-color: #fff;
 }
 
 ul#taskList li span {
