@@ -125,7 +125,7 @@ ul#taskList li.completed {
 }
 
 .task-input span{
-display: "none"
+  display: none;
 }
 
 @media (max-width: 576px) {
@@ -221,5 +221,6 @@ color: "black"
 }
 
 .task-input span{
-display: "block"
+display: block;
+text-align: center;
 }
