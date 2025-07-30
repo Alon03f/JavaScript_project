@@ -215,3 +215,10 @@ a {
 #taskDate title{
 color: "black"
 }
+
+.date-label {
+  position: relative;
+  color: black;
+  font-weight: bold;
+  margin-right: 5px;
+  }
