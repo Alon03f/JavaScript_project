@@ -110,6 +110,20 @@ ul#taskList li.completed {
   }
 }
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
 @media (max-width: 576px) {
   body {
   background-color: #fafafa;
