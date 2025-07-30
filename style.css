@@ -124,6 +124,10 @@ ul#taskList li.completed {
   color: #333;
 }
 
+.task-input span{
+display: "none"
+}
+
 @media (max-width: 576px) {
   body {
   background-color: #fafafa;
@@ -216,9 +220,6 @@ a {
 color: "black"
 }
 
-.date-label {
-  position: relative;
-  color: black;
-  font-weight: bold;
-  margin-right: 5px;
-  }
+.task-input span{
+display: "block"
+}
