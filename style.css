@@ -124,7 +124,7 @@ ul#taskList li.completed {
   color: #333;
 }
 
-.task-input span{
+main .task-input span{
   display: none;
 }
 
