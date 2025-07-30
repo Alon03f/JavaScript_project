@@ -146,6 +146,12 @@ ul#taskList li {
   gap: 0.5rem;
 }
 
+ul#taskList li span {
+  font-size: 1rem;
+  color: #000;
+  word-break: break-word;
+}
+
 ul#taskList li div {
   width: 100%;
   display: flex;
