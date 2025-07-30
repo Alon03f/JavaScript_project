@@ -1,7 +1,6 @@
 body {
-  font-family: 'Calibri', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background-color: #f4f4f4;
-  background-color: #494949;
   margin: 0;
   padding: 0;
   direction: rtl;
@@ -19,19 +18,15 @@ footer {
   color: white;
   text-align: center;
   padding: 1rem;
-  border-radius: 0 0 60px 60px;
+  border-radius: 0 0 12px 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer{
-  border-radius: 60px 60px 0px 0px;
 }
 
 main {
   max-width: 800px;
-  margin: 15px auto;
+  margin: auto;
   padding: 2rem;
-  background: #c7c1c1;
+  background: white;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
@@ -47,9 +42,6 @@ main {
 .task-input button {
   padding: 0.5rem;
   font-size: 1rem;
-  font-family: 'Calibri';
-  border: 0px solid #000;
-  border-radius: 8px;
 }
 
 .task-filters {
@@ -64,12 +56,10 @@ main {
   border: none;
   background-color: #ddd;
   transition: background-color 0.3s;
-  font-family: 'Calibri';
-  border-radius: 8px;
 }
 
 .task-filters button:hover {
-  background-color: #b1b1b1;
+  background-color: #bbb;
 }
 
 .task-filters button.active {
@@ -83,7 +73,7 @@ ul#taskList {
 }
 
 ul#taskList li {
-  background-color: #e7e6e6;
+  background-color: white;
   border: 1px solid #ccc;
   padding: 1rem;
   margin-bottom: 0.5rem;
@@ -93,30 +83,11 @@ ul#taskList li {
   transition: all 0.3s;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  font-family: 'Calibri';
-}
-
-.list_buttons{
-  background-color: #b4b4b4;
-  border: 0px solid #000;
-  border-radius: 8px;
-  font-family: 'Calibri';
-}
-
-.trash{
-  background-color: #b4b4b4;
-  color: white;
-  border: 0px solid #000;
-  border-radius: 8px;
-  height: 25px;
-}
-
-ul#taskList li.completed span {
-  text-decoration: line-through;
 }
 
 ul#taskList li.completed {
-  background-color: #888;
+  text-decoration: line-through;
+  background-color: #e0e0e0;
 }
 
 .fade-in {
@@ -133,68 +104,44 @@ ul#taskList li.completed {
   }
 }
 
-#alertOverlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.6);
+@media (max-width: 576px) {
+  main {
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .task-input {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .task-input input,
+  .task-input button {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.task-filters {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-filters button {
+  width: 100%;
+  font-size: 1rem;
+}
+
+ul#taskList li {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+ul#taskList li div {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#alertBox {
-  width: 400px;
-  height: 150px;
-  background-color: #fdfdfd;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  font-family: 'Calibri';
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  animation: popUp 0.4s ease;
-}
-
-#alertBox h2 {
-  margin-top: 0;
-  color: #c62828;
-  font-size: 24px;
-  font-size: 1.5em;
-}
-
-#alertBox p {
-  font-size: 18px;
-  margin: 20px 0;
-}
-
-#alertBox button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #2196f3;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#alertBox button:hover {
-  background-color: #1976d2;
-}
-
-@keyframes popUp {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-#alertOverlay.hidden {
-  display: none;
+  justify-content: space-between;
 }
